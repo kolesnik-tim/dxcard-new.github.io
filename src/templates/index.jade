@@ -1,6 +1,68 @@
 ---
-title: Index Page
+title: DX Card
 ---
 extends layouts/_layout
 block content
-  include ./home/intro
+  #fullpage
+    #section1.section.active
+      include ./home/intro
+    #section2.section
+      .description
+        #pulsating-background-below-hero.pulsating-background-container
+          .pulsating-background(style='background-color: rgb(255, 255, 255);')
+            .pulsating-background__circle(style='animation-delay: 0s; width: 1960px; height: 1960px; background-color: rgb(255, 255, 255); left: 50%; bottom: -68vh;')
+            .pulsating-background__circle(style='animation-delay: -0.3s; width: 1723px; height: 1723px; background-color: rgb(255, 255, 255); left: 50%; bottom: -55vh;')
+            .pulsating-background__circle(style='animation-delay: -0.6s; width: 1487px; height: 1487px; background-color: rgb(255, 255, 255); left: 50%; bottom: -42vh;')
+            .pulsating-background__circle(style='animation-delay: -0.9s; width: 1250px; height: 1250px; background-color: rgb(255, 255, 255); left: 50%; bottom: -29vh;')
+            .pulsating-background__circle(style='animation-delay: -1.2s; width: 1013px; height: 1013px; background-color: rgb(255, 255, 255); left: 50%; bottom: -16vh;')
+            .pulsating-background__circle(style='animation-delay: -1.5s; width: 777px; height: 777px; background-color: rgb(255, 255, 255); left: 50%; bottom: -3vh;')
+            .pulsating-background__circle(style='animation-delay: -1.8s; width: 540px; height: 540px; background-color: rgb(255, 255, 255); left: 50%; bottom: 10vh;')
+        .container
+          .row
+            .col-xs-6
+              span Meet your 
+                b DX Cards 
+                | there is on for everything
+              h2 Provide all your post purchase interactions in one place
+              p On an average your customer has to deal with 8-12 different touch points to access various post purchase services. Bring it down to 1 by putting everything on a personalized DX Card. Your customers post purchase journey now has only one all encompassing touch point.
+              .description__block
+                i 10x
+                b Jump in post purchase customer experience and convenience and in your brand value
+            .col-xs-6
+              .description__decor.description__decor--1
+                span
+                span
+    #section3.section
+      .description
+        .container
+          .row
+            .col-xs-6
+              h2 Personalize each DX Card for your customer
+              p The same product or service sold to different customers always has characteristics which are unique. DX Card allows you to tailor experiences which are customised for every customer and it gets better with every interaction.
+              .description__block
+                i 4x
+                b Increase in customer engagement if the content and experience is personalized..
+            .col-xs-6
+              .description__decor.description__decor--2
+                span
+    #section4.section
+      .description
+        .container
+          .row
+            .col-xs-6
+              h2 DX Card is the "Smartest" card in the world
+              p Every DX Card is powered by Bots which initiate micro-conversations with your customers at key stages of the post purchase journey. Step by step recommendations in a conversational flow help take the pain out of product journey management.
+              .description__block
+                i 20%
+                b Reduction in efforts for customers with DX Card managing the product journey for them
+            .col-xs-6
+              .description__decor.description__decor--3
+                span
+      include ./home/reviews
+  .phone
+    img(src="img/phone-1.jpg", alt="")
+    img(src="img/phone-2.jpg", alt="")
+    img(src="img/phone-1.jpg", alt="")
+    img(src="img/phone-2.jpg", alt="")
+    img(src="img/phone-1.jpg", alt="")
+    img(src="img/phone-2.jpg", alt="")

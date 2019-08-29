@@ -1,1 +1,130 @@
 .footer
+  background-color: $white-three
+  padding: 105px 0 40px
+  +r(767)
+    padding: 0px 0 30px
+  &__logo
+    +center-y
+    padding: 25px 0
+    padding-bottom: 55px
+    position: relative
+    +r(1040)
+      padding-bottom: 30px
+    +r(767)
+      justify-content: center
+    img
+      height: 50px
+      margin-right: 20px
+      +r(767)
+        margin-right: 15px
+    p
+      font-size: 14px
+      line-height: 1.43
+      font-weight: bold
+      color: $dark-two
+      span
+        font-size: 12px
+        font-weight: normal
+        display: block
+  &__social
+    +r(767)
+      display: flex
+      justify-content: center
+    a
+      margin-right: 20px
+      font-size: 30px
+      color: rgb(219, 223, 226)
+      &:hover
+        color: #ff0057
+      +r(767)
+        margin-right: 0
+        padding: 0 10px
+  &__contacts
+    padding: 25px 0 30px
+    p
+      font-size: 14px
+      line-height: 1.43
+      color: $pinkish-grey
+  &__nav
+    display: flex
+    justify-content: space-between
+    +r(767)
+      +center-column
+    &__block
+      +r(767)
+        width: 100%
+      h3
+        margin-bottom: 30px
+        font-size: 12px
+        font-weight: 400
+        color: $pinkish-grey
+        text-transform: uppercase
+        +r(767)
+          margin-bottom: 20px
+          display: block
+          width: calc(100% + 30px)
+          border-bottom: 1px solid #e6e6e6
+          position: relative
+          margin-bottom: 0
+          left: 50%
+          padding: 16px
+          transform: translate(-50%)
+          color: #4d4d4d
+          font-weight: 700
+        i
+          display: none
+          position: absolute
+          right: 20px
+          top: 50%
+          transform: translate(0, -50%)
+          font-weight: 300
+          color: #999
+          +tr
+          +r(767)
+            display: block
+        &.active
+          i
+            transform: translate(0, -50%) rotate(180deg)
+            color: #666
+      &:first-child
+        h3
+          +r(767)
+            border-top: 1px solid #e6e6e6
+      ul
+        +r(767)
+          display: none
+          width: calc(100% + 30px)
+          border-bottom: 1px solid #e6e6e6
+          left: 50%
+          position: relative
+          padding: 20px 10px 10px
+          padding-left: 30px
+          transform: translate(-50%)
+      li
+        margin-bottom: 15px
+        a
+          font-size: 14px
+          color: $dark-two
+          font-weight: 400
+          &:hover
+            text-decoration: underline
+  &__copyright
+    margin-top: 40px
+    +r(767)
+      margin-top: 20px
+    p
+      font-size: 12px
+      color: $slate-grey
+      line-height: 1.4
+  &__policy
+    margin-top: 40px
+    +r(767)
+      margin-top: 20px
+    a, span
+      font-size: 12px
+      color: $slate-grey
+      +tr
+    span
+      margin: 0 5px
+    a:hover
+      text-decoration: underline

@@ -1,0 +1,157 @@
+.reviews
+  overflow: hidden
+  +r(767)
+    padding-top: 50px
+  &__content
+    position: relative
+    .container
+      height: 100%
+    .swiper-container
+      height: 720px
+      +r(767)
+        height: auto
+    .swiper-slide
+      +cover
+      +r(767)
+        background-position: 80% 0
+    .swiper-button-prev, .swiper-button-next
+      background: none
+      width: 55px
+      height: 55px
+      +r(1040)
+        width: 35px
+        height: 35px
+      +r(767)
+        display: none
+      i
+        font-size: 55px
+        color: $white
+        +r(1040)
+          font-size: 35px
+    .swiper-button-prev
+      left: 5%
+      +r(1500)
+        left: 1%
+      +r(1400)
+        left: 10px
+    .swiper-button-next
+      right: 5%
+      +r(1500)
+        right: 1%
+      +r(1400)
+        right: 10px
+  .swiper-pagination
+    bottom: 110px
+    +r(767)
+      bottom: 10px
+    &-bullet
+      width: 13px
+      height: 13px
+      opacity: 0.2
+      background: $white
+      &-active
+        opacity: 1
+  &__block
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 100%
+    +r(1400)
+      padding-left: 60px
+    +r(1040)
+      padding-left: 40px
+    +r(767)
+      padding-left: 0
+  h3
+    font-size: 18px
+    font-weight: bold
+    color: #fdfdfd
+    padding-top: 70px
+    +r(767)
+      padding-top: 40px
+      padding-bottom: 20px
+  &__text
+    p
+      font-size: 30px
+      font-weight: 600
+      line-height: 1.33
+      color: #fdfdfd
+      margin-bottom: 30px
+      max-width: 390px
+      position: relative
+      +r(767)
+        font-size: 20px
+      &:before
+        content: ''
+        background-image: url('../img/quote.png')
+        width: 126px
+        height: 96px
+        +cover
+        position: absolute
+        left: -60px
+        top: -45px
+        display: block
+        +r(1400)
+          left: -10px
+    b
+      font-size: 18px
+      font-weight: normal
+      line-height: 1.39
+      color: #fdfdfd
+      margin-bottom: 20px
+      display: block
+      +r(767)
+        font-size: 16px
+    &__stars
+      +r(767)
+        margin-bottom: 50px
+      a
+        margin-right: 5px
+        i
+          color: #fff000
+          font-size: 17px
+  &__list
+    &__stages
+      display: flex
+      justify-content: space-between
+      +r(767)
+        flex-direction: column
+        margin-bottom: 50px
+      li
+        border: solid 1px rgba($white, 0.4)
+        border-bottom: none
+        border-top-right-radius: 10px
+        border-top-left-radius: 10px
+        padding: 20px 15px
+        +center
+        text-align: center
+        margin: 0 20px
+        font-size: 14px
+        font-weight: bold
+        color: #fdfdfd
+        position: relative
+        +r(1040)
+          margin: 0 10px
+          padding: 10px 15px
+        +r(767)
+          border-radius: 10px
+          margin: 10px 0
+          border: solid 1px rgba($white, 0.4)
+        &:before
+          content: $icon-double-arrows
+          position: absolute
+          right: -28px
+          font-family: "iconfont"
+          font-size: 12px
+          color: #ff0057
+          +r(1040)
+            right: -18px
+          +r(767)
+            right: auto
+            left: 50%
+            transform: translate(-50%) rotate(90deg)
+            font-size: 10px
+            bottom: -17px
+        &:last-child
+          &:before
+            display: none

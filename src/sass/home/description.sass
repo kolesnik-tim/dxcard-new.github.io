@@ -1,0 +1,89 @@
+.description
+  +center
+  position: relative
+  height: 100vh
+  .pulsating-background
+    bottom: auto
+    top: -61vh
+    left: 22vw
+  .pulsating-background-container
+    overflow: visible
+  span
+    font-size: 18px
+    font-weight: bold
+    color: #131c2e
+    text-transform: uppercase
+    margin-bottom: 30px
+    display: block
+    b
+      color: #ff0057
+  h2
+    font-size: 36px
+    font-weight: bold
+    color: #131c2e
+    margin-bottom: 30px
+  p
+    font-size: 18px
+    font-weight: normal
+    line-height: 1.53
+    color: #131c2e
+    margin-bottom: 50px
+    max-width: 450px
+    width: 100%
+  &__block
+    display: flex
+    align-items: center
+    i
+      width: 60px
+      height: 60px
+      background-color: #0ef7b5
+      font-size: 16px
+      font-weight: bold
+      font-style: normal
+      color: #131c2e
+      +center
+      border-radius: 100%
+    b
+      flex: 1
+      font-size: 14px
+      font-weight: 600
+      color: #131c2e
+      margin-left: 15px
+      max-width: 325px
+      width: 100%
+
+
+  &__decor
+    span
+      border-radius: 100%
+      display: block
+      position: absolute
+    &--1
+      span
+        &:first-child
+          width: 186px
+          height: 186px
+          background-color: #28e5f0
+          right: 30%
+          top: 18%
+        &:last-child
+          width: 285px
+          height: 285px
+          background-color: #ac7bea
+          right: 14%
+          top: 48%
+    &--2
+      span
+        width: 232px
+        height: 232px
+        background-color: #28e5f0
+        right: 30%
+        top: 5%
+    &--3
+      span
+        width: 232px
+        height: 232px
+        background-color: #a475df
+        right: 30%
+        top: 50%
+        transform: translate(0, -50%)

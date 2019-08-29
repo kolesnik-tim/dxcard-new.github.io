@@ -63,5 +63,10 @@
     "webpack-glsl-loader": "^1.0.1",
     "require-yaml": "^0.0.1",
     "lodash": "^4.3.0"
+  },
+  "dependencies": {
+    "fullpage.js": "^3.0.7",
+    "swiper": "^4.5.0",
+    "swipr": "^2.1.0"
   }
 }

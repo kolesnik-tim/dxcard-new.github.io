@@ -9,7 +9,18 @@
   font-style: normal;
 }
 
-$icon-facebook: "\EA01";
+$icon-arrow-down: "\EA01";
+$icon-arrow-right-circle: "\EA02";
+$icon-arrow-right: "\EA03";
+$icon-arrow_left-cicle: "\EA04";
+$icon-arrow_right-circle: "\EA05";
+$icon-check-1: "\EA06";
+$icon-check: "\EA07";
+$icon-double-arrows: "\EA08";
+$icon-facebook: "\EA09";
+$icon-left-chevron: "\EA0A";
+$icon-right-chevron: "\EA0B";
+$icon-star: "\EA0C";
 
 
 %icon {
@@ -28,4 +39,15 @@ $icon-facebook: "\EA01";
   display: inline-block;
 }
 
+.icon-arrow-down:before { content: $icon-arrow-down; }
+.icon-arrow-right-circle:before { content: $icon-arrow-right-circle; }
+.icon-arrow-right:before { content: $icon-arrow-right; }
+.icon-arrow_left-cicle:before { content: $icon-arrow_left-cicle; }
+.icon-arrow_right-circle:before { content: $icon-arrow_right-circle; }
+.icon-check-1:before { content: $icon-check-1; }
+.icon-check:before { content: $icon-check; }
+.icon-double-arrows:before { content: $icon-double-arrows; }
 .icon-facebook:before { content: $icon-facebook; }
+.icon-left-chevron:before { content: $icon-left-chevron; }
+.icon-right-chevron:before { content: $icon-right-chevron; }
+.icon-star:before { content: $icon-star; }
