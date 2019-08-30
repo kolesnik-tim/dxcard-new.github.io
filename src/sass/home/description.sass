@@ -30,6 +30,17 @@
     margin-bottom: 50px
     max-width: 450px
     width: 100%
+  &__fixed
+    max-width: 448px
+    width: 100%
+    &.fixed
+      position: fixed
+      top: 50%
+      transform: translate(0, -50%)
+    &.absolute
+      position: absolute
+      top: auto
+      transform: none
   &__block
     display: flex
     align-items: center
@@ -51,6 +62,29 @@
       margin-left: 15px
       max-width: 325px
       width: 100%
+  &__img
+    display: flex
+    align-items: center
+    &__block
+      width: 100%
+      margin-left: 20px
+      position: relative
+      +center-column
+      &:nth-child(2)
+        top: -60px
+      img
+        width: 100%
+      b
+        font-size: 12px
+        font-weight: 600
+        text-align: center
+        color: #131c2e
+        display: block
+        margin-top: 20px
+
+
+
+
 
 
   &__decor

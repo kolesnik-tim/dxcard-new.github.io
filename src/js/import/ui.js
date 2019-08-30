@@ -32,13 +32,7 @@ $('.footer__nav__block h3').on('click', function() {
   }
 });
 
-$(window).scroll(function() {
-  if($(this).scrollTop() >= ($(window).height() - $('.phone').outerHeight()) / 2) {
-    $('.phone').addClass('active');
-  } else{
-    $('.phone').removeClass('active');
-  }
-});
+
 
 
 
@@ -95,8 +89,8 @@ var myFullpage = new fullpage('#fullpage', {
   // sectionsColor : ['#ccc', '#fff'],
   // paddingTop: '3em',
   // paddingBottom: '10px',
-  fixedElements: '.header, .phone',
-  normalScrollElements: '#section4',
+  // fixedElements: '.header, .phone',
+  normalScrollElements: '#section11',
   // responsiveWidth: 0,
   // responsiveHeight: 0,
   // responsiveSlides: false,
@@ -112,30 +106,32 @@ var myFullpage = new fullpage('#fullpage', {
 
   //events
   onLeave: function(origin, nextIndex, direction) {
-    if(direction ==='down' && origin.index - 1 >= 0) {
-      $('.phone img').eq(origin.index).addClass('active');
-      $('.phone img').eq(origin.index - 1).removeClass('active').addClass('down');
-    } else if(direction ==='down' && origin.index - 1 <= 0) {
-      $('.phone img').eq(origin.index).addClass('active');
+    console.log(nextIndex);
+    $('.phone__block').each(function(i,elem) {
+      if(i < nextIndex.index) {
+        $(elem).removeClass('active').addClass('down');
+      } else if(i === nextIndex.index) {
+        $(elem).removeClass('down').addClass('active');
+      } else{
+        $(elem).removeClass('active').removeClass('down');
+      }
+    });
+    if(nextIndex.index === 0) {
+      $('.phone').removeClass('active');
+    }else if(nextIndex.index >= 1 && nextIndex.index <= 8) {
+      $('.phone').addClass('active');
     }
-    if(direction ==='up' && origin.index - 2 >= 0) {
-      setTimeout(function() {
-        $('.phone img').eq(origin.index - 2).removeClass().addClass('active');
-        $('.phone img').eq(origin.index - 1).removeClass();
-      }, 300); 
-    }else if(direction ==='up' && origin.index === 1) {
-      setTimeout(function() {
-        $('.phone img').removeClass();
-      }, 300); 
-    }
-    
-    // if(origin.index === 0 && direction ==='down') {
-    //   $('.phone img').eq(origin.index).addClass('active');
-    // }else if(origin.index === 1 && direction ==='up') {
-    //   $('.phone img').removeClass('active');
-    // }
   },
-  // afterLoad: function(origin, destination, direction) {},
+  afterLoad: function(origin, destination, direction) {
+    if(destination.index === 8 && direction === 'down') {
+      let top = $('#section9').offset().top + ($(window).height() - $('.phone').outerHeight()) / 2;
+      $('.phone').removeClass('active').addClass('stop').css({'top': top, 'transition': 'none'});
+    } else if(destination.index <= 4) {
+      $('.phone').css({'transition': 'all 1s cubic-bezier(.43,.06,0,1.05)', 'transition-delay': '0.3s'});
+    } else if(destination.index === 8 && direction === 'up') {
+      $('.phone').removeClass('stop').addClass('active').css({'top': '50vh', 'transition': 'none'});
+    }
+  },
   // afterRender: function() {},
   // afterResize: function(width, height) {},
   // afterReBuild: function() {},
@@ -143,6 +139,27 @@ var myFullpage = new fullpage('#fullpage', {
   // afterSlideLoad: function(section, origin, destination, direction) {},
   // onSlideLeave: function(section, origin, destination, direction) {}
 });
+
+
+//when scrolling a fixed block
+$(window).on('scroll', function() {
+  activeBlock();
+});
+$(document).ready(function() {
+  activeBlock();
+});
+
+function activeBlock() {
+  if($(window).scrollTop() < $('#section4 .description').offset().top) {
+    $('.description__fixed').removeClass('fixed').removeClass('absolute');
+  } else if($(window).scrollTop() >= $('#section4 .description').offset().top && $(window).scrollTop() < $('#section8 .description').offset().top) {
+    $('.description__fixed').removeClass('absolute');
+    $('.description__fixed').addClass('fixed').css({'top': '50%'});
+  }else if($(window).scrollTop() >= $('#section8 .description').offset().top) {
+    let top = $('.description__fixed').offset().top - $('#section4 .description').offset().top;
+    $('.description__fixed').addClass('absolute').css({'top': top});
+  }
+}
 
 
 

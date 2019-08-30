@@ -20,3 +20,23 @@ var swiper2 = new Swiper('.swiper-reviews', {
     }
   }
 });
+
+
+
+var galleryThumbs = new Swiper('.gallery-thumbs', {
+  spaceBetween: 10,
+  slidesPerView: 5,
+  freeMode: true,
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+});
+var galleryTop = new Swiper('.gallery-top', {
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-success-next',
+    prevEl: '.swiper-success-prev',
+  },
+  thumbs: {
+    swiper: galleryThumbs
+  }
+});

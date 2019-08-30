@@ -51,27 +51,61 @@
 
 .phone
   width: 310px
-  height: 650px
+  height: 640px
   border-radius: 40px
   box-shadow: 0px 3px 107.5px 0 rgba(0, 0, 0, 0.23)
   background: #fff
-  position: absolute
+  position: fixed
   transform: translate(0, 0%)
   top: 50vh
   right: 19%
   z-index: 99999
-  transition: all 0.6s
+  transition: all 1s cubic-bezier(.43,.06,0,1.05)
+  transition-delay: 0.3s 
   +center-column
   overflow: hidden
+  border: 8px solid #fff
   &.active
-    position: fixed
     transform: translate(0, -50%)
-  img
+  &.stop
+    position: absolute
+    transition: none
+  &__block
     width: 100%
+    height: calc(100% + 5px)
     position: absolute
     top: 110%
     transition: all 0.9s
+    +center
+    align-items: flex-end
+    border-radius: 36px
+    overflow: hidden
+    background: #fff
+    opacity: 0
+    img
+      width: 100%
+    &:first-child
+      background: #131c2e
+      height: 100%
+      align-items: center
+      img
+        width: 66px
+        position: relative
+        top: -80px
+      &:before
+        content: ''
+        width: 149px
+        height: 28px
+        background-color: #ffffff
+        position: absolute
+        top: -1px
+        left: 50%
+        transform: translate(-50%)
+        border-bottom-left-radius: 20px
+        border-bottom-right-radius: 20px
     &.active
-      top: 0
+      top: -5px
+      z-index: 2
+      opacity: 1
     &.down
       top: -110%

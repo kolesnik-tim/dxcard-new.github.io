@@ -1,0 +1,115 @@
+.success
+  background: rgb(244, 244, 244)
+  padding: 0 0 80px
+  .gallery-thumbs
+    .swiper-slide
+      +center
+      opacity: 0.25
+      cursor: pointer
+    .swiper-slide-thumb-active
+      opacity: 1
+  .gallery-top
+    padding-top: 95px
+    padding-bottom: 130px
+    .swiper-success-next, .swiper-success-prev
+      background: none
+      width: auto
+      height: auto
+      top: auto
+      bottom: 60px !important
+      i
+        font-size: 40px
+    .swiper-success-prev
+      left: 43.5%
+    .swiper-success-next
+      left: 47%
+      right: auto
+  .swiper-slide-thumb
+    opacity: 0.3
+  &__content
+    position: relative
+  &__img
+    max-width: 414px
+    width: 100%
+    border: solid 10px #ffffff
+    background-color: #f4f0eb
+    display: flex
+    align-items: flex-end
+    margin-top: 100px
+    position: relative
+    left: 50%
+    transform: translate(-50%)
+    z-index: 2
+    img:first-child
+      width: 100%
+      margin-top: -105px
+      display: block
+      position: relative
+      right: -15px
+      z-index: 2
+    img:last-child
+      position: absolute
+      top: -160px
+      left: 0%
+      z-index: 1
+  &__decor
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    &:before
+      content: ''
+      width: 32px
+      height: 32px
+      background-color: #986dcf
+      position: absolute
+      bottom: -7px
+      left: 8%
+      z-index: -1
+    span
+      position: absolute
+      &:first-child
+        left: 0
+        top: 0
+      &:last-child
+        bottom: 0px
+        right: 95px
+      &:before, &:after
+        content: ''
+        position: absolute
+        width: 22px
+        height: 22px
+      &:before
+        background: #2df6b6
+        left: 0px
+        top: 0
+      &:after
+        background: #28e6f1
+        top: 22px
+        left: 22px
+  &__text
+    h2
+      font-size: 36px
+      font-weight: bold
+      text-align: left
+      color: #131c2e
+      margin-bottom: 65px
+      max-width: 445px
+    p
+      font-size: 20px
+      font-weight: normal
+      line-height: 1.75
+      color: #131c2e
+      margin-bottom: 40px
+    strong
+      font-size: 18px
+      font-weight: 600
+      line-height: 1.39
+      color: #131c2e
+      display: block
+    span
+      font-size: 14px
+      font-weight: normal
+      line-height: 1.79
+      color: rgba(19, 28, 46, 0.6)
