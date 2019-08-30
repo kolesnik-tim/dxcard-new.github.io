@@ -106,7 +106,6 @@ var myFullpage = new fullpage('#fullpage', {
 
   //events
   onLeave: function(origin, nextIndex, direction) {
-    console.log(nextIndex);
     $('.phone__block').each(function(i,elem) {
       if(i < nextIndex.index) {
         $(elem).removeClass('active').addClass('down');
@@ -117,20 +116,21 @@ var myFullpage = new fullpage('#fullpage', {
       }
     });
     if(nextIndex.index === 0) {
+      console.log('1');
       $('.phone').removeClass('active');
     }else if(nextIndex.index >= 1 && nextIndex.index <= 8) {
       $('.phone').addClass('active');
     }
   },
   afterLoad: function(origin, destination, direction) {
-    if(destination.index === 8 && direction === 'down') {
-      let top = $('#section9').offset().top + ($(window).height() - $('.phone').outerHeight()) / 2;
-      $('.phone').removeClass('active').addClass('stop').css({'top': top, 'transition': 'none'});
-    } else if(destination.index <= 4) {
-      $('.phone').css({'transition': 'all 1s cubic-bezier(.43,.06,0,1.05)', 'transition-delay': '0.3s'});
-    } else if(destination.index === 8 && direction === 'up') {
-      $('.phone').removeClass('stop').addClass('active').css({'top': '50vh', 'transition': 'none'});
-    }
+    // if(destination.index === 8 && direction === 'down') {
+    //   let top = $('#section9').offset().top + ($(window).height() - $('.phone').outerHeight()) / 2;
+    //   $('.phone').removeClass('active').addClass('stop').css({'top': top, 'transition': 'none'});
+    // } else if(destination.index <= 4) {
+    //   $('.phone').css({'transition': 'all 1s cubic-bezier(.43,.06,0,1.05)', 'transition-delay': '0.3s'});
+    // } else if(destination.index === 8 && direction === 'up') {
+    //   $('.phone').removeClass('stop').addClass('active').css({'top': '50vh', 'transition': 'none'});
+    // }
   },
   // afterRender: function() {},
   // afterResize: function(width, height) {},
@@ -162,4 +162,16 @@ function activeBlock() {
 }
 
 
+
+//fixed phone #section9
+$(window).on('scroll', function() {
+  if($(window).scrollTop() < $('#section9 .description').offset().top && $(window).scrollTop() > $('#section6 .description').offset().top) {
+    $('.phone').removeClass('stop').addClass('active').css({'top': '50vh', 'transition': 'none'});
+  }else if($(window).scrollTop() >= $('#section8 .description').offset().top) {
+    let top = $('#section9').offset().top + ($(window).height() - $('.phone').outerHeight()) / 2;
+    $('.phone').removeClass('active').addClass('stop').css({'top': top, 'transition': 'none'});
+  } else if($(window).scrollTop() <= $('#section6 .description').offset().top && $(window).scrollTop() > $('#section4 .description').offset().top) {
+    $('.phone').css({'transition': 'all 1s cubic-bezier(.43,.06,0,1.05)', 'transition-delay': '0.3s'});
+  }
+});
 

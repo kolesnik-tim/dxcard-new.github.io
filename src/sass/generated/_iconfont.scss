@@ -21,6 +21,7 @@ $icon-facebook: "\EA09";
 $icon-left-chevron: "\EA0A";
 $icon-right-chevron: "\EA0B";
 $icon-star: "\EA0C";
+$icon-user: "\EA0D";
 
 
 %icon {
@@ -51,3 +52,4 @@ $icon-star: "\EA0C";
 .icon-left-chevron:before { content: $icon-left-chevron; }
 .icon-right-chevron:before { content: $icon-right-chevron; }
 .icon-star:before { content: $icon-star; }
+.icon-user:before { content: $icon-user; }
