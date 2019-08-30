@@ -42,8 +42,8 @@ import fullpage from 'fullpage.js';
 var myFullpage = new fullpage('#fullpage', {
   //Navigation
   menu: '#menu',
-  lockAnchors: false,
-  anchors:['firstPage', 'secondPage', 'secondPage-1', 'secondPage-2'],
+  // lockAnchors: false,
+  // anchors:['firstPage', 'secondPage', 'secondPage-1', 'secondPage-2'],
   navigation: true,
   navigationPosition: 'right',
   // navigationTooltips: ['firstSlide', 'secondSlide'],
@@ -91,8 +91,8 @@ var myFullpage = new fullpage('#fullpage', {
   // paddingBottom: '10px',
   // fixedElements: '.header, .phone',
   normalScrollElements: '#section11',
-  // responsiveWidth: 0,
-  // responsiveHeight: 0,
+  responsiveWidth: 767,
+  responsiveHeight: 600,
   // responsiveSlides: false,
   // parallax: false,
   // parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
@@ -167,4 +167,3 @@ $(window).on('scroll', function() {
 });
 
 
-myFullpage.setResponsive(true);
