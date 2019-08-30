@@ -47,9 +47,9 @@ var myFullpage = new fullpage('#fullpage', {
   navigation: true,
   navigationPosition: 'right',
   // navigationTooltips: ['firstSlide', 'secondSlide'],
-  showActiveTooltip: false,
-  slidesNavigation: false,
-  slidesNavPosition: 'bottom',
+  // showActiveTooltip: false,
+  // slidesNavigation: false,
+  // slidesNavPosition: 'bottom',
   
 
   //Scrolling
@@ -79,13 +79,13 @@ var myFullpage = new fullpage('#fullpage', {
   // bigSectionsDestination: null,
 
   //Accessibility
-  keyboardScrolling: true,
-  animateAnchor: true,
-  recordHistory: true,
+  // keyboardScrolling: true,
+  // animateAnchor: true,
+  // recordHistory: true,
 
   //Design
-  controlArrows: true,
-  verticalCentered: true,
+  // controlArrows: true,
+  // verticalCentered: true,
   // sectionsColor : ['#ccc', '#fff'],
   // paddingTop: '3em',
   // paddingBottom: '10px',
@@ -100,9 +100,9 @@ var myFullpage = new fullpage('#fullpage', {
   // cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
 
   //Custom selectors
-  sectionSelector: '.section',
-  slideSelector: '.slide',
-  lazyLoading: true,
+  // sectionSelector: '.section',
+  // slideSelector: '.slide',
+  // lazyLoading: true,
 
   //events
   onLeave: function(origin, nextIndex, direction) {
@@ -122,16 +122,7 @@ var myFullpage = new fullpage('#fullpage', {
       $('.phone').addClass('active');
     }
   },
-  afterLoad: function(origin, destination, direction) {
-    // if(destination.index === 8 && direction === 'down') {
-    //   let top = $('#section9').offset().top + ($(window).height() - $('.phone').outerHeight()) / 2;
-    //   $('.phone').removeClass('active').addClass('stop').css({'top': top, 'transition': 'none'});
-    // } else if(destination.index <= 4) {
-    //   $('.phone').css({'transition': 'all 1s cubic-bezier(.43,.06,0,1.05)', 'transition-delay': '0.3s'});
-    // } else if(destination.index === 8 && direction === 'up') {
-    //   $('.phone').removeClass('stop').addClass('active').css({'top': '50vh', 'transition': 'none'});
-    // }
-  },
+  // afterLoad: function(origin, destination, direction) {},
   // afterRender: function() {},
   // afterResize: function(width, height) {},
   // afterReBuild: function() {},
@@ -175,3 +166,5 @@ $(window).on('scroll', function() {
   }
 });
 
+
+myFullpage.setResponsive(true);
