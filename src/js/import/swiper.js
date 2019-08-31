@@ -29,6 +29,14 @@ var galleryThumbs = new Swiper('.gallery-thumbs', {
   freeMode: true,
   watchSlidesVisibility: true,
   watchSlidesProgress: true,
+  breakpoints: {
+    767: {
+      slidesPerView: 3,
+    },
+    400: {
+      slidesPerView: 2,
+    }
+  }
 });
 var galleryTop = new Swiper('.gallery-top', {
   spaceBetween: 10,

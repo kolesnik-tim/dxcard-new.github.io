@@ -1,10 +1,15 @@
 .section
   +rh(599)
     height: auto !important
+#section5, #section6, #section7, #section8
+  +r(767)
+    display: none
 .description
   +center
   position: relative
   height: 100%
+  +r(767)
+    padding: 50px 0
   .pulsating-background
     bottom: auto
     top: -61vh
@@ -18,6 +23,8 @@
     text-transform: uppercase
     margin-bottom: 30px
     display: block
+    +r(767)
+      text-align: center
     b
       color: #ff0057
   h2
@@ -27,6 +34,8 @@
     margin-bottom: 30px
     +r(1040)
       font-size: 30px
+    +r(767)
+      text-align: center
   p
     font-size: 18px
     font-weight: normal
@@ -37,11 +46,16 @@
     width: 100%
     +r(1040)
       font-size: 16px
+    +r(767)
+      text-align: center
+      max-width: 100%
   &__fixed
     max-width: 448px
     width: 100%
     +r(1040)
       max-width: 370px
+    +r(767)
+      max-width: 100%
     &.fixed
       position: fixed
       top: 50%
@@ -53,6 +67,8 @@
   &__block
     display: flex
     align-items: center
+    +r(767)
+      justify-content: center
     i
       width: 60px
       height: 60px
@@ -71,9 +87,28 @@
       margin-left: 15px
       max-width: 325px
       width: 100%
+    &__mobile
+      display: none
+      border-radius: 40px
+      box-shadow: 0px 3px 107.5px 0 rgba(0, 0, 0, 0.23)
+      background: #fff
+      border: 8px solid #fff
+      height: 550px
+      width: 265px
+      overflow: hidden
+      position: relative
+      left: 50%
+      transform: translate(-50%)
+      margin-top: 40px
+      img
+        height: 100%
+      +r(767)
+        +center
   &__img
     display: flex
     align-items: center
+    +r(767)
+      margin-top: 100px
     &__block
       width: 100%
       margin-left: 20px
@@ -97,6 +132,8 @@
 
 
   &__decor
+    +r(767)
+      display: none
     span
       border-radius: 100%
       display: block

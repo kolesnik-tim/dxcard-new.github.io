@@ -2,12 +2,16 @@
   background: rgb(244, 244, 244)
   padding: 0 0 80px
   .gallery-thumbs
+    .swiper-wrapper
+      display: flex
+      align-items: center
     .swiper-slide
       +center
       opacity: 0.25
       cursor: pointer
       img
         height: 50px
+
     .swiper-slide-thumb-active
       opacity: 1
   .gallery-top
@@ -23,11 +27,15 @@
         font-size: 40px
     .swiper-success-prev
       left: 43.5%
+      +r(767)
+        left: calc(50% - 50px)
     .swiper-success-next
       left: 47%
       right: auto
       +r(1240)
         left: 49%
+      +r(767)
+        left: calc(50% + 10px)
   .swiper-slide-thumb
     opacity: 0.3
   &__content
@@ -100,20 +108,34 @@
       color: #131c2e
       margin-bottom: 65px
       max-width: 445px
+      +r(767)
+        max-width: 100%
+        margin-top: 50px
+        text-align: center
+        font-size: 30px
+        margin-bottom: 30px
     p
       font-size: 20px
       font-weight: normal
       line-height: 1.75
       color: #131c2e
       margin-bottom: 40px
+      +r(767)
+        text-align: center
+        font-size: 16px
     strong
       font-size: 18px
       font-weight: 600
       line-height: 1.39
       color: #131c2e
       display: block
+      +r(767)
+        text-align: center
     span
       font-size: 14px
       font-weight: normal
       line-height: 1.79
       color: rgba(19, 28, 46, 0.6)
+      +r(767)
+        text-align: center
+        display: block
