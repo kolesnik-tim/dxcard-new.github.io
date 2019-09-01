@@ -57,13 +57,18 @@ if($(window).width() > 767) {
       });
       if(nextIndex.index === 0) {
         $('.phone').removeClass('active');
+        $('#fp-nav').fadeOut();
       }else if(nextIndex.index >= 1 && nextIndex.index <= 8) {
         $('.phone').addClass('active');
+        $('#fp-nav').fadeIn();
+      }else if(nextIndex.index >= 10) {
+        $('#fp-nav').fadeOut();
       }
     },
     afterLoad: function(origin, destination, direction) {
       if(destination.index === 0) {
         $('.phone').removeClass('active');
+        $('#fp-nav').fadeOut();
       }else if(destination.index >= 1 && destination.index <= 8) {
         $('.phone').addClass('active');
       }
@@ -80,14 +85,15 @@ if($(window).width() > 767) {
   });
 
   function activeBlock() {
+    let blockPhone = $('.description__fixed');
     if($(window).scrollTop() < $('#section4 .description').offset().top) {
-      $('.description__fixed').removeClass('fixed').removeClass('absolute');
+      blockPhone.removeClass('fixed').removeClass('absolute');
     } else if($(window).scrollTop() >= $('#section4 .description').offset().top && $(window).scrollTop() < $('#section8 .description').offset().top) {
-      $('.description__fixed').removeClass('absolute');
-      $('.description__fixed').addClass('fixed').css({'top': '50%'});
+      blockPhone.removeClass('absolute');
+      blockPhone.addClass('fixed').css({'top': '50%'});
     }else if($(window).scrollTop() >= $('#section8 .description').offset().top) {
-      let top = $('.description__fixed').offset().top - $('#section4 .description').offset().top;
-      $('.description__fixed').addClass('absolute').css({'top': top});
+      let top = $('#section8 .description').offset().top - $('#section4 .description').offset().top + (($(window).height() - blockPhone.outerHeight()) / 2);
+      blockPhone.addClass('absolute').css({'top': top});
     }
   }
 

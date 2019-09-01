@@ -78,6 +78,8 @@
           right: -1.4rem
           +tr
           color: #9e9e9e
+          +r(1200)
+            right: -10px
       li
         &.active
           i
@@ -196,6 +198,102 @@
         font-weight: 600
         color: #ff0057
         margin-left: 15px
+        +r(767)
+          width: calc(100% - 20px)
+          margin-left: 0
         &:hover
           background-color: #ff0057
           color: $white
+
+
+
+
+
+
+
+
+.menu
+  position: fixed
+  right: -100%
+  top: 0
+  width: 255px
+  height: 100vh
+  background: $white
+  z-index: 999
+  +tr
+  overflow-y: scroll
+  &.active
+    right: 0
+  &-bg
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0
+    left: 0
+    background: rgba(0, 0, 0, 0.7)
+    z-index: 999
+    display: none
+
+  .header__btn
+    +r(1040)
+      padding-right: 0
+      flex-direction: column
+      align-items: flex-start
+      padding-left: 20px
+    a
+      +r(1040)
+        color: #5e5a54
+        margin-bottom: 10px
+    .btn
+      +r(1040)
+        width: calc(100% - 20px)
+        margin-left: 0
+  &__content
+    margin-bottom: 20px
+  li
+    border-bottom: 1px solid #eee
+    position: relative
+    a
+      padding: 12px 20px
+      color: #5e5a54
+      font-size: 14px
+      font-weight: normal
+      display: block
+      &.menu__item.active
+        background: #ddd
+        span
+          background: #131c2e
+          i
+            color: $white
+            transform: rotate(180deg)
+    .menu__item
+      span
+        position: absolute
+        top: 0
+        right: 0
+        width: 38px
+        height: 43px
+        background-color: rgba(238,238,238,.5)
+        +center
+        +tr
+      i
+        color: #5e5a54
+        font-size: 13px
+        font-weight: 300
+        +tr
+  &__dropdown
+    background-color: #eee
+    padding-left: 15px
+    display: none
+    b
+      font-weight: normal
+    a
+      display: flex !important
+      align-items: center
+      line-height: 1.6
+      padding-bottom: 16px
+    &__img
+      width: 70px
+    &__list
+      flex: 1
+    

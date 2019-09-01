@@ -14,6 +14,8 @@
     bottom: auto
     top: -61vh
     left: 22vw
+    +r(767)
+      top: -80%
   .pulsating-background-container
     overflow: visible
   span
@@ -116,6 +118,9 @@
       +center-column
       &:nth-child(2)
         top: -60px
+      &:first-child
+        +r(767)
+          margin-left: 0
       img
         width: 100%
       b

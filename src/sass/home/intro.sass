@@ -65,6 +65,9 @@
       +r(767)
         &:last-child
           margin-right: 0
+      +r(374)
+        margin-right: 5px
+        font-size: 11px
       i
         margin-right: 6px
         font-size: 10px
@@ -82,7 +85,7 @@
   transform: translate(0, 0%)
   top: 50vh
   right: 19%
-  z-index: 99999
+  z-index: 99
   transition: all 1s cubic-bezier(.43,.06,0,1.05)
   transition-delay: 0.3s 
   +center-column
@@ -97,6 +100,7 @@
   &.stop
     position: absolute
     transition: none
+    transform: translate(0, 0%) !important
   &__block
     width: 100%
     height: calc(100% + 5px)
