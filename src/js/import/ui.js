@@ -19,7 +19,7 @@ import fullpage from 'fullpage.js';
 
 
 
-if($(window).width() > 767) {
+if($(window).width() > 767 && $('div').hasClass('phone')) {
   var myFullpage = new fullpage('#fullpage', {
   //Navigation
     menu: '#menu',
