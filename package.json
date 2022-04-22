@@ -65,7 +65,7 @@
     "lodash": "^4.3.0"
   },
   "dependencies": {
-    "fullpage.js": "^3.0.7",
+    "fullpage.js": "^4.0.5",
     "swiper": "^4.5.0",
     "swipr": "^2.1.0"
   }
